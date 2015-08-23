@@ -805,7 +805,7 @@ import java.util.Locale;
           tempString = path.substring(0, path.indexOf("/../"));
           segIndex = tempString.lastIndexOf('/');
           if (segIndex != -1) {
-              if (!tempString.substring(segIndex).equals("..")) {
+              if (!tempString.substring(segIndex).equals("src/main")) {
                   path = path.substring(0, segIndex+1).concat(path.substring(index+4));
                   index = segIndex;
               }
@@ -820,7 +820,7 @@ import java.util.Locale;
       
       // 6f - remove ending "<segment>/.." where "<segment>" is a
       // complete path segment
-      if (path.endsWith("/..")) {
+      if (path.endsWith("/src/main")) {
           tempString = path.substring(0, path.length()-3);
           segIndex = tempString.lastIndexOf('/');
           if (segIndex != -1) {
